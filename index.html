@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgences & Soutien - Neon Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #050510;
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 25%);
+        }
+
+        .font-neon {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Animation des boutons */
+        .neon-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neon-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .neon-btn:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .neon-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Effets de lueur spécifiques par couleur */
+        .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.3), inset 0 0 10px rgba(239, 68, 68, 0.2); border: 2px solid rgba(239, 68, 68, 0.6); }
+        .glow-red:hover { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6), inset 0 0 20px rgba(239, 68, 68, 0.4); border-color: #ef4444; }
+
+        .glow-blue { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.2); border: 2px solid rgba(56, 189, 248, 0.6); }
+        .glow-blue:hover { box-shadow: 0 0 30px rgba(56, 189, 248, 0.6), inset 0 0 20px rgba(56, 189, 248, 0.4); border-color: #38bdf8; }
+
+        .glow-purple { box-shadow: 0 0 15px rgba(168, 85, 247, 0.3), inset 0 0 10px rgba(168, 85, 247, 0.2); border: 2px solid rgba(168, 85, 247, 0.6); }
+        .glow-purple:hover { box-shadow: 0 0 30px rgba(168, 85, 247, 0.6), inset 0 0 20px rgba(168, 85, 247, 0.4); border-color: #a855f7; }
+        
+        .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3), inset 0 0 10px rgba(34, 197, 94, 0.2); border: 2px solid rgba(34, 197, 94, 0.6); }
+        .glow-green:hover { box-shadow: 0 0 30px rgba(34, 197, 94, 0.6), inset 0 0 20px rgba(34, 197, 94, 0.4); border-color: #22c55e; }
+
+        .glow-teal { box-shadow: 0 0 15px rgba(20, 184, 166, 0.3), inset 0 0 10px rgba(20, 184, 166, 0.2); border: 2px solid rgba(20, 184, 166, 0.6); }
+        .glow-teal:hover { box-shadow: 0 0 30px rgba(20, 184, 166, 0.6), inset 0 0 20px rgba(20, 184, 166, 0.4); border-color: #14b8a6; }
+
+        .card-bg {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-4 md:p-8">
+
+    <!-- Header -->
+    <header class="w-full text-center mb-10 mt-4">
+        <h1 class="text-4xl md:text-6xl font-neon font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse tracking-wider">
+            URGENCES
+        </h1>
+        <p class="text-gray-400 mt-2 text-lg tracking-widest uppercase">Numéros d'aide & Signalement</p>
+    </header>
+
+    <!-- Grid Container -->
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mb-12">
+
+        <!-- 17 - Police -->
+        <div class="card-bg rounded-2xl p-6 flex flex-col items-center justify-between text-center group hover:bg-white/5 transition duration-300">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-blue-400 mb-1">DANGER IMMÉDIAT</h2>
+                <p class="text-gray-300 text-sm">Police Secours. Agression, vol, violence en cours.</p>
+            </div>
+            <a href="tel:17" class="neon-btn glow-blue w-32 h-32 rounded-full flex flex-col items-center justify-center mb-2 bg-gray-900 group-hover:scale-110">
+                <i class="fas fa-shield-alt text-3xl mb-1 text-blue-400"></i>
+                <span class="font-neon text-3xl font-bold text-white">17</span>
+            </a>
+            <span class="text-xs text-blue-300/50 uppercase tracking-widest">Appel Gratuit</span>
+        </div>
+
+        <!-- 911 - International -->
+        <div class="card-bg rounded-2xl p-6 flex flex-col items-center justify-between text-center group hover:bg-white/5 transition duration-300">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-red-500 mb-1">URGENCE UNIVERSELLE</h2>
+                <p class="text-gray-300 text-sm">Fonctionne partout (Europe/France). Toutes urgences.</p>
+            </div>
+            <a href="tel:911" class="neon-btn glow-red w-32 h-32 rounded-full flex flex-col items-center justify-center mb-2 bg-gray-900 group-hover:scale-110">
+                <i class="fas fa-star-of-life text-3xl mb-1 text-red-500"></i>
+                <span class="font-neon text-3xl font-bold text-white">911</span>
+            </a>
+            <span class="text-xs text-red-300/50 uppercase tracking-widest">International</span>
+        </div>
+
+        <!-- 119 - Enfance en danger -->
+        <div class="card-bg rounded-2xl p-6 flex flex-col items-center justify-between text-center group hover:bg-white/5 transition duration-300">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-red-400 mb-1">ENFANCE EN DANGER</h2>
+                <p class="text-gray-300 text-sm">Enfant victime de violences physiques ou psychologiques.</p>
+            </div>
+            <a href="tel:119" class="neon-btn glow-red w-32 h-32 rounded-full flex flex-col items-center justify-center mb-2 bg-gray-900 group-hover:scale-110">
+                <i class="fas fa-child-reaching text-3xl mb-1 text-red-400"></i>
+                <span class="font-neon text-3xl font-bold text-white">119</span>
+            </a>
+            <span class="text-xs text-red-300/50 uppercase tracking-widest">Anonyme & Gratuit</span>
+        </div>
+
+        <!-- 3018 - Cyberharcèlement -->
+        <div class="card-bg rounded-2xl p-6 flex flex-col items-center justify-between text-center group hover:bg-white/5 transition duration-300">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-cyan-400 mb-1">CYBERHARCÈLEMENT</h2>
+                <p class="text-gray-300 text-sm">Harcèlement en ligne, revenge porn, chantage webcam.</p>
+            </div>
+            <a href="tel:3018" class="neon-btn glow-blue w-32 h-32 rounded-full flex flex-col items-center justify-center mb-2 bg-gray-900 group-hover:scale-110">
+                <i class="fas fa-comments text-3xl mb-1 text-cyan-400"></i>
+                <span class="font-neon text-3xl font-bold text-white">3018</span>
+            </a>
+            <span class="text-xs text-cyan-300/50 uppercase tracking-widest">Confientiel</span>
+        </div>
+
+        <!-- 3114 - Suicide -->
+        <div class="card-bg rounded-2xl p-6 flex flex-col items-center justify-between text-center group hover:bg-white/5 transition duration-300">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-teal-400 mb-1">PRÉVENTION SUICIDE</h2>
+                <p class="text-gray-300 text-sm">En détresse ? Idées noires ? Une écoute professionnelle 24/7.</p>
+            </div>
+            <a href="tel:3114" class="neon-btn glow-teal w-32 h-32 rounded-full flex flex-col items-center justify-center mb-2 bg-gray-900 group-hover:scale-110">
+                <i class="fas fa-hand-holding-heart text-3xl mb-1 text-teal-400"></i>
+                <span class="font-neon text-3xl font-bold text-white">3114</span>
+            </a>
+            <span class="text-xs text-teal-300/50 uppercase tracking-widest">24/7</span>
+        </div>
+
+        <!-- 3928 - Discriminations -->
+        <div class="card-bg rounded-2xl p-6 flex flex-col items-center justify-between text-center group hover:bg-white/5 transition duration-300">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-purple-400 mb-1">ANTI-DISCRIMINATION</h2>
+                <p class="text-gray-300 text-sm">Victime ou témoin de discrimination ou de haine.</p>
+            </div>
+            <a href="tel:3928" class="neon-btn glow-purple w-32 h-32 rounded-full flex flex-col items-center justify-center mb-2 bg-gray-900 group-hover:scale-110">
+                <i class="fas fa-scale-balanced text-3xl mb-1 text-purple-400"></i>
+                <span class="font-neon text-3xl font-bold text-white">3928</span>
+            </a>
+            <span class="text-xs text-purple-300/50 uppercase tracking-widest">Défenseur des droits</span>
+        </div>
+
+    </main>
+
+    <!-- App Section -->
+    <footer class="w-full max-w-4xl mt-auto border-t border-gray-800 pt-8 pb-4 flex flex-col items-center">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-mobile-screen-button text-cyan-400 text-2xl"></i>
+            <h3 class="text-xl font-neon text-white">TÉLÉCHARGER L'APP <span class="text-cyan-400">3018</span></h3>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center px-4">
+            <!-- App Store -->
+            <a href="https://apps.apple.com/fr/app/3018/id1606296312" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center justify-center gap-3 bg-gray-900 hover:bg-gray-800 border border-gray-600 hover:border-gray-400 rounded-xl px-6 py-3 transition-all duration-300 w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-cyan-500/20">
+                <svg class="w-8 h-8 fill-white" viewBox="0 0 384 512">
+                    <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 46.9 78.1 76.2 78.1 19.3 0 28.1-12.7 58.8-12.7 30.8 0 40.2 12.7 61.8 12.7 29.5 0 57.6-35.8 77.1-78.1 5.7-11.8 17.6-38.3 17.6-38.3s-40.6-13.8-41.2-47.7zm-33-109.3c14.4-18.5 24-43.8 21.6-67.7-19.5 1.6-43.4 13.9-58.4 31.7-13.6 15.9-24.5 41.5-22 66.8 22.3 2.1 43.8-11.8 58.8-30.8z"/>
+                </svg>
+                <div class="flex flex-col text-left">
+                    <span class="text-[10px] uppercase tracking-wider text-gray-400">Télécharger dans</span>
+                    <span class="text-lg font-bold font-neon leading-none mt-1">l'App Store</span>
+                </div>
+            </a>
+
+            <!-- Google Play -->
+            <a href="https://play.google.com/store/apps/details?id=fr.e_enfance.app3018&hl=fr&gl=US" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center justify-center gap-3 bg-gray-900 hover:bg-gray-800 border border-gray-600 hover:border-gray-400 rounded-xl px-6 py-3 transition-all duration-300 w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-cyan-500/20">
+                <svg class="w-7 h-7" viewBox="0 0 512 512">
+                    <path fill="#34A853" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm287.3 271.7c-7.5-4.1-13.1-10.8-16-18.6l75-75 75 75c-2.9 7.8-8.5 14.5-16 18.6L334.3 271.7zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/>
+                    <path fill="#4285F4" d="M385.4 344.1l80.2 46.1c9.7 5.6 15.6 15.9 15.6 27.2s-5.9 21.6-15.6 27.2l-80.2 46.1-60.1-60.1 60.1-86.5z"/>
+                    <path fill="#FBBC04" d="M104.6 13L325.3 234.3 265.2 294.4 44.6 473.7 104.6 13z"/>
+                    <path fill="#EA4335" d="M44.6 38.3l220.6 179.4 60.1-60.1L104.6 499 44.6 38.3z"/>
+                </svg>
+                <div class="flex flex-col text-left">
+                    <span class="text-[10px] uppercase tracking-wider text-gray-400">DISPONIBLE SUR</span>
+                    <span class="text-lg font-bold font-neon leading-none mt-1">Google Play</span>
+                </div>
+            </a>
+        </div>
+        <p class="text-gray-600 text-xs mt-6">En cas d'urgence vitale absolue, composez le 15 (SAMU) ou le 18 (Pompiers).</p>
+    </footer>
+
+</body>
+</html>
